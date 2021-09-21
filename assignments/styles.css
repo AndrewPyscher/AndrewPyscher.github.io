@@ -35,7 +35,8 @@ span{
     padding-left: 20px;
     padding-right: 20px;
     border-style: solid;
-    border-color: blue 5px;
+    border-width: 5px;
+    border-color: blue;
     background-color: yellow;
 
 }
@@ -51,8 +52,14 @@ span{
     position: absolute; right:250px; height: -50px;
 }
 
-
-
+.a{
+  word-wrap: break-word;
+  display: inline-block;
+}
+.b{
+  position: relative;
+  display: block;
+}
 
 
 .stripey tr:nth-child(even) {
