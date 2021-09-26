@@ -77,7 +77,7 @@ tr:nth-child(2n):hover, .alternate tr:hover {
   background-color: black;
   color: white;
 }
-tbody tr:hover td, tbody tr:hover th {
+td:hover {
   background-color: yellow;
   
 }
