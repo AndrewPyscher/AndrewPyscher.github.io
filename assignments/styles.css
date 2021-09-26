@@ -63,14 +63,21 @@ span{
 
 
 
-.alternate tr:nth-child(2n) {
+tr:nth-child(2n) {
   background-color: silver;
 }
 
-.alternate tr {
+ tr {
   background-color: white;
 }
-
-.alternate tr:nth-child(2n):hover, .alternate tr:hover {
+tr:nth-child(2n):hover, .alternate tr:hover {
   background-color: grey;
+}
+ th {
+  background-color: black;
+  color: white;
+}
+tbody tr:hover td, tbody tr:hover th {
+  background-color: yellow;
+  
 }
