@@ -1,6 +1,5 @@
 #mainNav {
-    background-color: #ccc;
-    color: black;
+
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -45,20 +44,26 @@ span{
     
 }
 .dog{
-    position: relative; left: -50px; height: 150px;
+    position: relative; bottom: 150px; left: -50px; 
 }
 
 .bird{
     position: absolute; right:250px; height: -50px;
+    
+
 }
 
 .a{
-  word-wrap: break-word;
-  display: inline-block;
+ 
+
 }
 .b{
   position: relative;
   display: block;
+}
+.c {
+  display: inline-block;
+  word-wrap: break-word;
 }
 
 table{
@@ -84,4 +89,7 @@ td:hover {
   
 }
 
+input:focus{
+  background-color: pink;
+}
 
