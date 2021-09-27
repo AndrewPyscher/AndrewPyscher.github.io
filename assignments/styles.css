@@ -61,7 +61,9 @@ span{
   display: block;
 }
 
-
+table{
+  text-align: right;
+}
 
 tr:nth-child(2n) {
   background-color: silver;
@@ -81,3 +83,5 @@ td:hover {
   background-color: yellow;
   
 }
+
+
