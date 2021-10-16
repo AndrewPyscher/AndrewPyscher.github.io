@@ -1,0 +1,35 @@
+th, td {text-align: center;} 
+
+table{
+  border-collapse: collapse;
+
+}
+.btn-success{
+  background-color:  green;
+  margin: 4px 2px;
+  padding: 5px 15px;
+}
+.btn-danger{
+  background-color: firebrick;
+  margin: 4px 2px;
+  padding: 5px 15px;
+}
+
+.btn-clear{
+  background-color: gray;
+  margin: 4px 2px;
+  padding: 5px 15px;
+}
+
+tr{
+  border-bottom: 1pt solid black;
+  border-left: 1pt solid black;
+  border-right: 1pt solid black;
+  border-top: 1pt solid black;
+}
+
+td{
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+}
+
