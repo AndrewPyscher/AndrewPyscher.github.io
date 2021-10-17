@@ -2,23 +2,53 @@ th, td {text-align: center;}
 
 table{
   border-collapse: collapse;
-
+  min-width: 50%;
+  background-color: whitesmoke;
+  height: 80%;
 }
 .btn-success{
   background-color:  green;
   margin: 4px 2px;
   padding: 5px 15px;
+  border-radius: 50%;
+  border: 2px solid black;
 }
 .btn-danger{
   background-color: firebrick;
   margin: 4px 2px;
   padding: 5px 15px;
+  border-radius: 50%;
+  border: 2px solid black;
 }
 
 .btn-clear{
   background-color: gray;
   margin: 4px 2px;
   padding: 5px 15px;
+  border: 2px solid black;
+}
+
+.btn-success, .btn-danger, .btn-clear{
+  transition-duration: .4s;
+}
+
+.btn-success:hover {
+  background-color: lawngreen;
+  color: white;
+}
+
+
+
+.btn-clear:hover {
+  background-color: lightgray;
+  color: white;
+}
+
+
+
+.btn-danger:hover {
+  background-color: red;
+  color: white;
 }
 
 tr{
@@ -29,7 +59,22 @@ tr{
 }
 
 td{
-  padding-left: 7.5px;
-  padding-right: 7.5px;
+  width: 10px;
 }
 
+#table {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+}
+
+table tr:last-child {
+  font-weight: bold;  
+}
+table tr:first-child{
+  font-weight: bold;
+}
