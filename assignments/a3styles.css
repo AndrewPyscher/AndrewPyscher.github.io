@@ -95,8 +95,6 @@ td:nth-child(2){
   border-right: 1pt solid black;
 }
 
-.wireframe{
-  position: relative;
-  right: 300px;
-  size: 500px;
+.wireFrame{
+  position: fixed; bottom: 0px; right: 0px;
 }
