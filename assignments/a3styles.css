@@ -78,3 +78,19 @@ table tr:last-child {
 table tr:first-child{
   font-weight: bold;
 }
+
+tr:nth-child(20n) {
+  background-color: silver;
+  font-weight: bold;
+  font-size: large;
+}
+tr:nth-child(1) {
+  background-color: lightslategray;
+  font-weight: bold;
+  font-size: large;
+}
+
+td:nth-child(2){
+  font-weight: bold;
+  border-right: 1pt solid black;
+}
