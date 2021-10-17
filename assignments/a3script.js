@@ -54,8 +54,8 @@ function subtract1 (elem) {
 }
 
 function clear (elem){
-  elem.children[2].innerHTML = "0";
-  elem.children[3].innerHTML = "0";
+  elem.children[2].innerHTML = "-";
+  elem.children[3].innerHTML = "-";
 }
 
 function update(){
