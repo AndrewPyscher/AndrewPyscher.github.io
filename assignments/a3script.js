@@ -1,3 +1,6 @@
+// Andrew Pyscher
+// acpysche@svsu.edu
+// javascript for golf scorecard
 let elem = [];
 var myTable = document.getElementById('Table');
 myTable.rows[19].cells[1].innerHTML = 4 * 18;
