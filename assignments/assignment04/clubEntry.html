@@ -19,7 +19,7 @@
 <div class='container'>
 
 	<h1>Add Club</h1>
-	<form action='clubDistanceList.html'>
+	<!-- <form action='clubDistanceList.html'> -->
 		<div class='form-group'>
 			<label for='clubName'></label>
 			<input name='clubName' id='clubName' type='text' 
@@ -51,7 +51,16 @@
 	let newClubDistances;
 	
 	function addClub() {
-        // your code here
+		
+		numOfRows = totalClubs();
+
+		let body = document.getElementById("tbody");
+		console.log(body[0].children[1]);
+
+		if(clubCount >= 14){
+			alert("Warning: you are only allowed to carry 14 clubs in your golf bag in match play competition.")
+	}
+	clubs.push(clubName);
 	}
 	
 	// navigate to club distance LIST screen
