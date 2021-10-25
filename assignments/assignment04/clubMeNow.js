@@ -28,6 +28,10 @@ clubDistanceEntry.html
 // ----- Functions (clubDistanceList.html) -----
 
 // initialize "clubs" array
+
+
+
+
 function loadClubDistances() {
 	let clubs;
 	// if "clubs" array already exists, load it from local storage
@@ -75,6 +79,7 @@ function appendTableRows() {
 		cell5.innerHTML = "<button class='btn btn-success cmn_noPadding cmn_fullHeight' onclick='displayClubDistanceEntryForm(" + i + ");'>&nbsp;&nbsp;+&nbsp;&nbsp;</button>";
 		cell6.innerHTML = clubs[i][2]; // clubName
 		// cell6.innerHTML = clubs[i][2] + ", " + clubs[i][7] + "&deg;"; 
+
 	}
 }
 
@@ -90,15 +95,13 @@ function displayClubDistanceEntryForm(c) {
 }
 
 // replace the current "clubs" array with the previous one
-function undoLastShot() {
-        // your code here !
-}
+
 
 // create a new (default) "clubs" array
 function resetAllClubDistances() {
 	// create 2d global array, called "clubs" throughout app
 	// columns - 0: sortPosition, 1: clubAbbrev, 2: clubName, 
-	// 3: avgDist, 4: minDist, 5: maxDist, 6: numOfShots, 
+	// 3:i avgDist, 4: minDst, 5: maxDist, 6: numOfShots, 
 	// 7: loft/degrees, 8: typical/men, 9: typical/women
 	let clubs = [
 		[ 199, "Dr",  "Driver",   0, 0, 0, 0, 10.5, 230, 200],
@@ -118,6 +121,8 @@ function resetAllClubDistances() {
 		[1499, "Lw",  "Lob",      0, 0, 0, 0, 60.0,  60,  40],
 		[1599, "Ptr", "Putter",   0, 0, 0, 0, 60.0,   3,   3],
 	];
+
+	
 	// store the array in local storage
 	let str = JSON.stringify(clubs);
 	localStorage.setItem("clubs", str);
@@ -126,10 +131,12 @@ function resetAllClubDistances() {
 }
 
 // navigate to "About" screen
-function displayAbout() {
-	// your code here
-	// window.location.href = "clubAbout.html";
-}
+
+
+document.getElementById("About").onclick = function () { 
+	window.location.href = "clubAbout.html";
+};
+
 
 // navigate to "Penalty Info" screen
 function displayPenaltyInfo() {
@@ -171,15 +178,30 @@ function appendTapEntryButtons() {
 		teDiv.appendChild(btn); 
 	}
 }
+function undoLastShot(){
+	console.log("hi");
+	let text = localStorage.getItem("clubsUndo");
+	let obj = JSON.stringify(text);
+
+
+	if (localStorage.getItem("clubsUndo")) {
+		clubs = JSON.parse(localStorage.getItem("clubsUndo"));
+		updateStats();
+	}
+	
+	}
 
 // update distances based on user-entered value, "shotDistance"
 function updateStats(shotDistance=0) {
+	let lastShot = parseInt(shotDistance);
+
 	// shotDistance can be user-entered by fast-entry button or by typed input
 	// if shotDistance==0 then shotDistance was entered by typed input,
 	// so must pull shotValue from getElementById('clubVal')
 	if(shotDistance==0)
 		shotDistance = parseInt(document.getElementById('clubVal').value);
 	if(parseInt(shotDistance) > 0) {
+		
 		// save current clubs array for "Undo" functionality
 		let str = JSON.stringify(clubs);
 		localStorage.setItem("clubsUndo", str);
@@ -202,5 +224,7 @@ function updateStats(shotDistance=0) {
 		localStorage.setItem("clubs", str);
 		// return to list screen
 		window.location.href = "clubDistanceList.html"; 
+		
 	}
+	return lastShot;
 }
