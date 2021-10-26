@@ -233,13 +233,36 @@ function appendTableRow5 (tableobj, col1, col2, col3, col4, col5) {
 
     // function: finalValidate() ------------------------------------
     function finalValidate() {
+      let inputs = new Array();
+        inputs[0] = document.getElementById('first').value;
+        inputs[1] = document.getElementById('last').value;
+        inputs[2] = document.getElementById('email').value;
+        inputs[3] = document.getElementById('uid').value;
+        inputs[4] = document.getElementById('password').value;
+        inputs[5] = document.getElementById('confirm').value;
+        let errors = new Array();
+        errors[0] = "<span style='color:red'>Please enter your first name!</span>";
+        errors[1] = "<span style='color:red'>Please enter your last name!</span>";
+        errors[2] = "<span style='color:red'>Please enter your email!</span>";
+        errors[3] = "<span style='color:red'>Please enter your user id!</span>";
+        errors[4] = "<span style='color:red'>Please enter your password!</span>";
+        errors[5] = "<span style='color:red'>Please confirm your password!</span>";
+
+
         let count = 0;
-        for (i = 0; i < 6; i++) {
-            let div = divs[i];
+        let div = divs[i];
+        let errMessage = errors[i]
+        for (i in inputs) {
+        let div = divs[i];
+        let errMessage = errors[i]
+          if(inputs[i] === ""){
+            document.getElementById(div).innerHTML = errMessage;
+          }
             if (document.getElementById(div).innerHTML == "OK!")
                 count = count + 1;
         }
-        if (count == 6)
+
+        if (count == 6 )
             document.getElementById("errFinal").innerHTML 
               = "All the data you entered is correct!!!";
 
@@ -331,7 +354,7 @@ function createTable(id) {
 }
 
 // possible object oriented form append code
-/*
+
 let fieldLabel, fieldEntry, fieldError;
 for(let i=0; i<formArray.length; i++) {
   fieldLabel = formArray[i].label;
@@ -344,4 +367,3 @@ for(let i=0; i<formArray.length; i++) {
 console.log(fieldLabel);
 console.log(fieldEntry);
 console.log(fieldError);
-*/
