@@ -37,7 +37,7 @@
 	</table>
 	
 	<button class='btn btn-warning cmn_fullHeight' 
-	  onclick='undoLastShot();           // called if user clicked'>Undo</button> 
+	  onclick='undoLastShot();refresh();           // called if user clicked'>Undo</button> 
 
 	<button class='btn btn-danger cmn_fullHeight' 
 	  onclick='resetAllClubDistances();  // called if user clicked'>Reset</button> 
@@ -57,8 +57,11 @@
 		let rows = document.getElementById("clubTable").rows.length;
 		return rows;
 	}
+	
 
-
+	function refresh(){
+	window.location.href = "clubDistanceList.html"; 
+}
 
 let clubs = loadClubDistances(); // called first</script>
 
