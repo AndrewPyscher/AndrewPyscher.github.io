@@ -179,15 +179,52 @@ function appendTapEntryButtons() {
 	}
 }
 function undoLastShot(){
-	console.log("hi");
-	let text = localStorage.getItem("clubsUndo");
-	let obj = JSON.stringify(text);
-
+	let clubs;
 
 	if (localStorage.getItem("clubsUndo")) {
-		clubs = JSON.parse(localStorage.getItem("clubsUndo"));
-		updateStats();
+		let text = localStorage.getItem("clubsUndo");
+		let clubs = JSON.parse(text);
+		clubs = JSON.parse(text);
+		document.getElementById("clubTable").innerText = clubs;
+	
 	}
+	// otherwise create new "clubs" array, using resetAllClubs()
+	else {
+		clubs = resetAllClubDistances();
+		clubs = JSON.parse(localStorage.getItem("clubs"));
+		console.log("b");
+	}
+
+
+	return clubs;
+
+
+
+
+
+
+
+
+
+
+
+	// let clubs;
+	// // if "clubs" array already exists, load it from local storage
+	// if (localStorage.getItem("clubsUndo")) {
+	// 	clubs = JSON.parse(localStorage.getItem("clubsUndo"));
+	// 	console.log("a");
+	// 	loadClubDistances();
+	// }
+	// else {
+	// 	clubs = resetAllClubDistances();
+	// 	clubs = JSON.parse(localStorage.getItem("clubs"));
+	// 	console.log("b")
+	// }
+	// // let text = localStorage.getItem("clubsUndo");
+	// // let obj = JSON.stringify(text);
+	// // document.getElementById("clubsTable") = obj;
+
+	// return clubs;
 	
 	}
 
