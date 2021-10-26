@@ -26,7 +26,7 @@
 			    class='form-control cmn_moreHeight' 
 				placeholder='Driver' required /><br>
 			<button class='btn btn-success cmn_fullHeight' 
-			    onclick='addClub();'>&nbsp;&nbsp;&#x2714;&nbsp;&nbsp;</button> 
+			    onclick='addClub(document.getElementById("clubName").value);'>&nbsp;&nbsp;&#x2714;&nbsp;&nbsp;</button> 
 			<button class='btn btn-danger cmn_fullHeight'  
 			    onclick='cancelClub();'>&nbsp;&nbsp;X&nbsp;&nbsp;</button>
 			<br>
@@ -50,16 +50,19 @@
 	let newClubName ;
 	let newClubDistances;
 	
-	function addClub() {
+	function addClub(userClub) {
 		let clubCount =14;
 		clubCount += 1;
-
+		clubs.push([clubRow, userClub, userClub, 0, 0,0,0,0,0,0,0]);
+		let str = JSON.stringify(clubs);
+		localStorage.setItem("clubs", str);
+		
 
 		if(clubCount >= 14){
 			alert("Warning: you are only allowed to carry 14 clubs in your golf bag in match play competition.");
 			console.log("g")
 	}
-
+	window.location.href = "clubDistanceList.html"; 
 	}
 	
 	// navigate to club distance LIST screen
