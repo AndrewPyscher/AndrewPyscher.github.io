@@ -115,6 +115,7 @@ function loadContent() {
         }
       }
       newConfirmedOver1000 = _.orderBy(newConfirmedOver1000, "NewDeaths", "desc");
+      
 
       chartData.data.datasets[0].backgroundColor = "rgba(100,100,100,0.4)"; // gray
       chartData.data.datasets[1].backgroundColor  = "rgba(255,0,0,0.4)"; // red
@@ -250,7 +251,7 @@ for (let i=0; i < covidJsObj.Countries.length; i++) {
     "TotalConfirmed": covidJsObj.Countries[i].TotalConfirmed,
     "TotalDeaths": covidJsObj.Countries[i].TotalDeaths,
     "Population": populations[covidJsObj.Countries[i].Slug],
-    "TotalConfirmedPer100k": Math.round(100000 * covidJsObj.Countries[i].TotalDeaths / populations[covidJsObj.Countries[i].Slug])
+    "TotalConfirmedPer100k": Math.round( covidJsObj.Countries[i].TotalConfirmed / populations[covidJsObj.Countries[i].Slug] * 100000)
     
   })
   }
